@@ -16,8 +16,18 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                use: ['style-loader', 'css-loader'],
-                test: /\.css$/
+                test: /\.less$/,
+                use: ['style-loader', 'css-loader', 'less-loader'],
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {limit: 40000}
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     },

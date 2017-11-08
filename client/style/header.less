@@ -1,0 +1,53 @@
+body {
+  margin: 0px;
+}
+.loading {
+  background: url("./images/ajax-loader.gif") no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  background: #fff;
+  align-items: center;
+  padding: 0 25px;
+  border-bottom: 4px solid #8d8e7c;
+
+  &__home-link,
+  &__search-link {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 2em;
+    color: rgb(153, 153, 153);
+    letter-spacing: 0.2em;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.25s;
+      letter-spacing: inherit;
+      color: inherit;
+      outline: 0px;
+      height: 23px;
+      display: block;
+      margin: auto 1em;
+      font-weight: 600;
+      &:hover {
+        border-bottom: 2px solid #9e1110;
+      }
+    }
+  }
+}
