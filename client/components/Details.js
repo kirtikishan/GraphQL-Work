@@ -11,7 +11,7 @@ class Details extends Component {
         debugger;
         return (
             <div {...detailsPage()}>
-                
+
             </div>
         );
     }
