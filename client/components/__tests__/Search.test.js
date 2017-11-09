@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Search} from '../Search';
 import { shallow } from 'enzyme';
-import searchQuery from '../searchQuery';
+import {searchQuery} from '../Queries';
 
 describe('Search Component', () => {
     it('should render the search correctly', () => {
@@ -33,11 +33,10 @@ describe('Search Component', () => {
         const wrapper = shallow(
             <Search data={data}/>
         );
-
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should be rendered the correct query', () => {
+    it('should be rendered the correct search query', () => {
         expect(searchQuery).toMatchSnapshot();
     });
 })

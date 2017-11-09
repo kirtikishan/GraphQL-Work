@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search Component should be rendered the correct query 1`] = `
+exports[`Search Component should be rendered the correct search query 1`] = `
 Object {
   "definitions": Array [
     Object {

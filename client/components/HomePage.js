@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 import BEMHelper from 'react-bem-helper';
-
+import {homePageQuery} from './Queries';
 var homePage = new BEMHelper('home-page');
 var homePageDetails = new BEMHelper('home-page__details');
-class HomePage extends Component {
+export class HomePage extends Component {
 
     constructor(props) {
         super(props);
@@ -41,22 +41,4 @@ class HomePage extends Component {
     }
 }
 
-const query = gql`
-  {
-     carOfTheWeek{
-          modelId,
-          review,
-          carModel {
-            makeId,
-            name,
-            price,
-            imageUrl
-            make {
-              name
-            }
-          }
-     }
-  }
-`;
-
-export default graphql(query)(HomePage);
+export default graphql(homePageQuery)(HomePage);

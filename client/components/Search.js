@@ -4,8 +4,9 @@ import {graphql} from 'react-apollo';
 import BEMHelper from 'react-bem-helper';
 import Select from 'react-select';
 import {Link} from 'react-router';
+import {searchQuery} from './Queries';
 
-var searchPage = new BEMHelper('search-page');
+let searchPage = new BEMHelper('search-page');
 
 export class Search extends Component {
     constructor(props) {
@@ -107,18 +108,5 @@ export class Search extends Component {
     }
 }
 
-const query = gql`
-      {
-         makes {
-            id,
-            name
-            models { 
-                id,
-                name
-            }
-         }   
-      }
-    `;
-
-export default graphql(query)(Search);
+export default graphql(searchQuery)(Search);
 
