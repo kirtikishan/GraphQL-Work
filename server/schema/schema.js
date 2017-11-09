@@ -17,8 +17,7 @@ const carType = new GraphQLObjectType({
         carModel: {
             type: ModelType,
             resolve(parentValue, args) {
-                console.log(parentValue, args);
-                return axios.get(`http://localhost:3000/models/${parentValue.modelId}`)
+                return axios.get(`http://localhost:4000/models/${parentValue.modelId}`)
                     .then(resp => resp.data);
             }
         }
@@ -33,8 +32,7 @@ const MakeType = new GraphQLObjectType({
         models: {
             type: new GraphQLList(ModelType),
             resolve(parentValue, args) {
-                console.log(parentValue, args);
-                return axios.get(`http://localhost:3000/makes/${parentValue.id}/models`)
+                return axios.get(`http://localhost:4000/makes/${parentValue.id}/models`)
                     .then(resp => resp.data);
             }
         }
@@ -52,7 +50,7 @@ const ModelType = new GraphQLObjectType({
         make: {
             type: MakeType,
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/makes/${parentValue.makeId}`)
+                return axios.get(`http://localhost:4000/makes/${parentValue.makeId}`)
                     .then(resp => resp.data);
             }
         }
@@ -66,7 +64,7 @@ const RootQuery = new GraphQLObjectType({
             type: ModelType,
             args: {id: {type: GraphQLInt}},
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/models/${args.id}`)
+                return axios.get(`http://localhost:4000/models/${args.id}`)
                     .then(resp => resp.data);
             }
         },
@@ -74,7 +72,7 @@ const RootQuery = new GraphQLObjectType({
             type: MakeType,
             args: {id: {type: GraphQLInt}},
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/makes/${args.id}`)
+                return axios.get(`http://localhost:4000/makes/${args.id}`)
                     .then(resp => resp.data);
             }
 
@@ -83,14 +81,14 @@ const RootQuery = new GraphQLObjectType({
             type: new GraphQLList(MakeType),
             args: {id: {type: GraphQLInt}},
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/makes`)
+                return axios.get(`http://localhost:4000/makes`)
                     .then(resp => resp.data);
             }
         },
         carOfTheWeek: {
             type: carType,
             resolve(parentValue, args) {
-                return axios.get(`http://localhost:3000/carOfTheWeek`)
+                return axios.get(`http://localhost:4000/carOfTheWeek`)
                     .then(resp => resp.data);
             }
         }

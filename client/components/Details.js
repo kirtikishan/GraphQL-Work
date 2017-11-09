@@ -12,7 +12,7 @@ class Details extends Component {
         let {model, loading} = this.props.data;
 
         if(loading) {
-            return <div className="loading"></div>
+            return (<div className="loading"></div>);
         }else {
             return (
                 <div {...detailsPage()}>
@@ -26,11 +26,10 @@ class Details extends Component {
                     </div>
                     <img {...detailsPage('detail-img')} src={model.imageUrl} />
                 </div>
-            )
+            );
         };
     }
 }
-
 
 export const modelsQuery = gql`
   query ModelsQuery($id : Int!) {

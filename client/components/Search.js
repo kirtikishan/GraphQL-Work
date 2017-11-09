@@ -7,7 +7,7 @@ import {Link} from 'react-router';
 
 var searchPage = new BEMHelper('search-page');
 
-class Search extends Component {
+export class Search extends Component {
     constructor(props) {
         super(props);
         this.makeChange = this.makeChange.bind(this);
@@ -20,14 +20,13 @@ class Search extends Component {
             makeOptions: [],
             modelOptions: [],
             modelId: ''
-        }
+        };
     }
-
 
     makeChange(selectObj) {
         let {makes} = this.props.data;
         let make = makes.find((makeObj) => {
-            return makeObj.id === selectObj.value
+            return makeObj.id === selectObj.value;
         });
 
         this.setState({
@@ -42,7 +41,7 @@ class Search extends Component {
             modelId: modelObj.value,
             enableSearchBtn: true,
             modelValue: modelObj.value
-        })
+        });
     }
 
     getSelectionArray(arr) {
@@ -65,9 +64,8 @@ class Search extends Component {
             makeOptions = this.getSelectionArray(makes);
         }
 
-        console.log(this.props);
         if (loading) {
-            return <div className="loading"></div>
+            return (<div className="loading"></div>);
         } else {
             return (
                 <div {...searchPage()}>
@@ -104,7 +102,7 @@ class Search extends Component {
                         </span>
                     </div>
                 </div>
-            )
+            );
         }
     }
 }

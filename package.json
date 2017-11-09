@@ -5,7 +5,21 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --ignore client",
-    "json-server": "json-server --watch server/db.json"
+    "json-server": "json-server -p 4000 --watch server/db.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "author": "Kirti Kishan",
   "dependencies": {
@@ -27,7 +41,7 @@
     "react": "15.4.2",
     "react-apollo": "^0.9.0",
     "react-bem-helper": "^1.4.1",
-    "react-dom": "15.4.2",
+    "react-dom": "^15.6.2",
     "react-router": "^3.0.2",
     "react-router-transition": "^1.1.1",
     "react-select": "^1.0.0-rc.10",
@@ -37,11 +51,23 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^21.2.0",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.2.2",
+    "eslint": "^4.10.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^1.1.5",
+    "identity-obj-proxy": "^3.0.0",
     "image-webpack-loader": "^3.4.2",
+    "jest": "^21.2.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^15.6.2",
     "url-loader": "^0.6.2"
   }
 }

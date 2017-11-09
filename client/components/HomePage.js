@@ -15,7 +15,7 @@ class HomePage extends Component {
         let {carOfTheWeek, loading} = this.props.data;
 
         if(loading) {
-            return <div className="loading"></div>
+            return (<div className="loading"></div>);
         } else {
             return (
                 <div {...homePage()}>
@@ -36,7 +36,7 @@ class HomePage extends Component {
                         </div>
                     </div>
                 </div>
-            )
+            );
         }
     }
 }

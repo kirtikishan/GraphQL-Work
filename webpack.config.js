@@ -28,6 +28,11 @@ module.exports = {
                     },
                     'image-webpack-loader'
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader', 'eslint-loader']
             }
         ]
     },

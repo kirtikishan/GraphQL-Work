@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should check the rendered snapshot 1`] = `
+<div
+  className="header"
+>
+  <span
+    className="header__home-link"
+  >
+    <a
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Home
+    </a>
+  </span>
+  <span
+    className="header__search-link"
+  >
+    <a
+      onClick={[Function]}
+      style={Object {}}
+    >
+      Search
+    </a>
+  </span>
+</div>
+`;
